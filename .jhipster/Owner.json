@@ -1,0 +1,26 @@
+{
+    "name": "Owner",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "teamOwner",
+            "otherEntityRelationshipName": "owner",
+            "relationshipName": "teamOwner"
+        }
+    ],
+    "changelogDate": "20190806204828",
+    "entityTableName": "owner",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

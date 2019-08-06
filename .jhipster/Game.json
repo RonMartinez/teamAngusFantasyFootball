@@ -1,0 +1,28 @@
+{
+    "name": "Game",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "week",
+            "otherEntityRelationshipName": "week",
+            "relationshipName": "week",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "gameTeam",
+            "otherEntityRelationshipName": "game",
+            "relationshipName": "game"
+        }
+    ],
+    "changelogDate": "20190806204834",
+    "entityTableName": "game",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Team",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "teamOwner",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "teamOwner"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "gameTeam",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "gameTeam"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "seasonTeam",
+            "otherEntityRelationshipName": "team",
+            "relationshipName": "seasonTeam"
+        }
+    ],
+    "changelogDate": "20190806204829",
+    "entityTableName": "team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

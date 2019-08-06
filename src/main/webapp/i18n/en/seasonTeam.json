@@ -1,0 +1,24 @@
+{
+  "teamAngusFantasyFootballApp": {
+    "seasonTeam": {
+      "home": {
+        "title": "Season Teams",
+        "createLabel": "Create a new Season Team",
+        "createOrEditLabel": "Create or edit a Season Team",
+        "notFound": "No Season Teams found"
+      },
+      "created": "A new Season Team is created with identifier {{ param }}",
+      "updated": "A Season Team is updated with identifier {{ param }}",
+      "deleted": "A Season Team is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Season Team {{ id }}?"
+      },
+      "detail": {
+        "title": "Season Team"
+      },
+      "year": "Year",
+      "season": "Season",
+      "team": "Team"
+    }
+  }
+}

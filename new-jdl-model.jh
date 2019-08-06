@@ -1,0 +1,52 @@
+entity Owner {
+	name String
+}
+
+entity Team {
+
+}
+
+entity TeamOwner {
+	name String
+}
+
+entity Rules {
+	description String
+}
+
+entity Rules {
+	description String
+}
+
+entity Season {
+	year Integer
+}
+
+entity Week {
+	playoffs Boolean,
+    championship Boolean
+}
+
+entity Game {
+}
+
+entity GameTeam {
+	score BigDecimal
+}
+
+entity SeasonTeam {
+	year Integer
+}
+
+relationship ManyToOne {
+	TeamOwner{team} to Team{teamOwner},
+    TeamOwner{owner} to Owner{teamOwner},
+    TeamOwner{effectiveWeek} to Week{teamOwner},
+    Week{season} to Season{week},
+    Game{week} to Week{week},
+    GameTeam{game} to Game{game},
+    GameTeam{team} to Team{gameTeam},
+    SeasonTeam{season} to Season{seasonTeam},
+    SeasonTeam{team} to Team{seasonTeam},
+    Season{rules} to Rules{season}
+}

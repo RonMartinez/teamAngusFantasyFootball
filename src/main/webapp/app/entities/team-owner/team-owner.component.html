@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="teamAngusFantasyFootballApp.teamOwner.home.title">Team Owners</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-team-owner" [routerLink]="['/team-owner/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="teamAngusFantasyFootballApp.teamOwner.home.createLabel">
+            Create a new Team Owner
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="teamOwners?.length === 0">
+        <span jhiTranslate="teamAngusFantasyFootballApp.teamOwner.home.notFound">No teamOwners found</span>
+    </div>
+    <div class="table-responsive" *ngIf="teamOwners?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="teamAngusFantasyFootballApp.teamOwner.name">Name</span></th>
+            <th><span jhiTranslate="teamAngusFantasyFootballApp.teamOwner.team">Team</span></th>
+            <th><span jhiTranslate="teamAngusFantasyFootballApp.teamOwner.owner">Owner</span></th>
+            <th><span jhiTranslate="teamAngusFantasyFootballApp.teamOwner.effectiveWeek">Effective Week</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let teamOwner of teamOwners ;trackBy: trackId">
+                <td><a [routerLink]="['/team-owner', teamOwner.id, 'view' ]">{{teamOwner.id}}</a></td>
+                <td>{{teamOwner.name}}</td>
+                <td>
+                    <div *ngIf="teamOwner.team">
+                        <a [routerLink]="['/team', teamOwner.team?.id, 'view' ]" >{{teamOwner.team?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="teamOwner.owner">
+                        <a [routerLink]="['/owner', teamOwner.owner?.id, 'view' ]" >{{teamOwner.owner?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="teamOwner.effectiveWeek">
+                        <a [routerLink]="['/week', teamOwner.effectiveWeek?.id, 'view' ]" >{{teamOwner.effectiveWeek?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/team-owner', teamOwner.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/team-owner', teamOwner.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/team-owner', { outlets: { popup: teamOwner.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
