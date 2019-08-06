@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gameTeam">
+            <h2><span jhiTranslate="teamAngusFantasyFootballApp.gameTeam.detail.title">Game Team</span> {{gameTeam.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="teamAngusFantasyFootballApp.gameTeam.score">Score</span></dt>
+                <dd>
+                    <span>{{gameTeam.score}}</span>
+                </dd>
+                <dt><span jhiTranslate="teamAngusFantasyFootballApp.gameTeam.game">Game</span></dt>
+                <dd>
+                    <div *ngIf="gameTeam.game">
+                        <a [routerLink]="['/game', gameTeam.game?.id, 'view']">{{gameTeam.game?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="teamAngusFantasyFootballApp.gameTeam.team">Team</span></dt>
+                <dd>
+                    <div *ngIf="gameTeam.team">
+                        <a [routerLink]="['/team', gameTeam.team?.id, 'view']">{{gameTeam.team?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/game-team', gameTeam.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

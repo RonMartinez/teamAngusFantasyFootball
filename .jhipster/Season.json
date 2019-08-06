@@ -1,0 +1,39 @@
+{
+    "name": "Season",
+    "fields": [
+        {
+            "fieldName": "year",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "rules",
+            "otherEntityRelationshipName": "season",
+            "relationshipName": "rules",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "week",
+            "otherEntityRelationshipName": "season",
+            "relationshipName": "week"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "seasonTeam",
+            "otherEntityRelationshipName": "season",
+            "relationshipName": "seasonTeam"
+        }
+    ],
+    "changelogDate": "20190806204832",
+    "entityTableName": "season",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,34 @@
+{
+    "name": "SeasonTeam",
+    "fields": [
+        {
+            "fieldName": "year",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "season",
+            "otherEntityRelationshipName": "seasonTeam",
+            "relationshipName": "season",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "team",
+            "otherEntityRelationshipName": "seasonTeam",
+            "relationshipName": "team",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190806204836",
+    "entityTableName": "season_team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -43,6 +43,25 @@ public class CacheConfiguration {
             createCache(cm, com.teamangus.domain.User.class.getName());
             createCache(cm, com.teamangus.domain.Authority.class.getName());
             createCache(cm, com.teamangus.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.teamangus.domain.Owner.class.getName());
+            createCache(cm, com.teamangus.domain.Owner.class.getName() + ".teamOwners");
+            createCache(cm, com.teamangus.domain.Team.class.getName());
+            createCache(cm, com.teamangus.domain.Team.class.getName() + ".teamOwners");
+            createCache(cm, com.teamangus.domain.Team.class.getName() + ".gameTeams");
+            createCache(cm, com.teamangus.domain.Team.class.getName() + ".seasonTeams");
+            createCache(cm, com.teamangus.domain.TeamOwner.class.getName());
+            createCache(cm, com.teamangus.domain.Rules.class.getName());
+            createCache(cm, com.teamangus.domain.Rules.class.getName() + ".seasons");
+            createCache(cm, com.teamangus.domain.Season.class.getName());
+            createCache(cm, com.teamangus.domain.Season.class.getName() + ".weeks");
+            createCache(cm, com.teamangus.domain.Season.class.getName() + ".seasonTeams");
+            createCache(cm, com.teamangus.domain.Week.class.getName());
+            createCache(cm, com.teamangus.domain.Week.class.getName() + ".teamOwners");
+            createCache(cm, com.teamangus.domain.Week.class.getName() + ".weeks");
+            createCache(cm, com.teamangus.domain.Game.class.getName());
+            createCache(cm, com.teamangus.domain.Game.class.getName() + ".games");
+            createCache(cm, com.teamangus.domain.GameTeam.class.getName());
+            createCache(cm, com.teamangus.domain.SeasonTeam.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

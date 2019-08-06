@@ -1,0 +1,34 @@
+{
+    "name": "GameTeam",
+    "fields": [
+        {
+            "fieldName": "score",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "game",
+            "otherEntityRelationshipName": "game",
+            "relationshipName": "game",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "team",
+            "otherEntityRelationshipName": "gameTeam",
+            "relationshipName": "team",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190806204835",
+    "entityTableName": "game_team",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

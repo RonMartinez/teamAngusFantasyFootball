@@ -1,0 +1,43 @@
+{
+    "name": "Week",
+    "fields": [
+        {
+            "fieldName": "playoffs",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "championship",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "season",
+            "otherEntityRelationshipName": "week",
+            "relationshipName": "season",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "teamOwner",
+            "otherEntityRelationshipName": "effectiveWeek",
+            "relationshipName": "teamOwner"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "game",
+            "otherEntityRelationshipName": "week",
+            "relationshipName": "week"
+        }
+    ],
+    "changelogDate": "20190806204833",
+    "entityTableName": "week",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
